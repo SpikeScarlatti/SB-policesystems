@@ -6,6 +6,8 @@
 --
 Config = {}
 
+Config.TeleportInVehicle = true -- teleport player in vehicle when it spawn
+
 Config.AllowedVehicles = {
     "police",
     "police2",

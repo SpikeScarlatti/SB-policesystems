@@ -44,8 +44,10 @@ RegisterCommand('sv', function(source, args, user)
     else
         local playerPed = PlayerPedId()
 
-        ESX.Game.SpawnVehicle(GetHashKey(vehicleName), GetOffsetFromEntityInWorldCoords(playerPed, 1.5, 6.0, 2.0), GetEntityHeading(playerPed), function(vehicle)
-
+        ESX.Game.SpawnVehicle(GetHashKey(vehicleName), GetEntityCoords(playerPed), GetEntityHeading(playerPed), function(vehicle)
+            if Config.TeleportInVehicle then
+                TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)  -- teleport into vehicle
+            end
         end)
     end
 end)
@@ -69,15 +71,9 @@ end)
 
 RegisterNetEvent('impoundVeh')
 AddEventHandler('impoundVeh', function()
-    local vehicle, attempt = ESX.Game.GetVehicleInDirection(), 0
+    local vehicle = ESX.Game.GetVehicleInDirection()
 
-    while not NetworkHasControlOfEntity(vehicle) and attempt < 100 and DoesEntityExist(vehicle) do
-        Citizen.Wait(100)
-        NetworkRequestControlOfEntity(vehicle)
-        attempt = attempt + 1
-    end
-
-    if DoesEntityExist(vehicle) and NetworkHasControlOfEntity(vehicle) then
+    if DoesEntityExist(vehicle) then
         TriggerEvent("mythic_progressbar:client:progress", {
             name = "Impounding",
             duration = 1500,
