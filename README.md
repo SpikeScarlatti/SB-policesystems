@@ -14,9 +14,9 @@ https://streamable.com/h6sjx Impounding Vehicle
 
 # Usage In Game
 
-Only will work for police
+Only will work for police officer
 
-/sv #
+/sv vehicleName
 
 /impound 
 
