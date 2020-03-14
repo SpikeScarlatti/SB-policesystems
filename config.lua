@@ -1,13 +1,19 @@
+--
+-- Script Forked From StarBlazt - https://github.com/StarBlazt/SB-policesystems
+-- User: Spike Scarlatti
+-- Date: 14-03-20
+-- Time: 11:46
+--
 Config = {}
 
-Config.VehList = {
-    [1] = 'police',
-    [2] = 'police2',
-    [3] = 'police3',
-    [4] = 'policeb',
-    [5] = 'sheriff',
-    [6] = 'sheriff2',
-    [7] = 'pbus',
-    [8] = 'predator',
-    [9] = 'polmav',
+Config.AllowedVehicles = {
+    "police",
+    "police2",
+    "police3",
+    "policeb",
+    "sheriff",
+    "sheriff2",
+    "pbus",
+    "predator",
+    "polmav",
 }
