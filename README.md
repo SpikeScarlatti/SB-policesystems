@@ -1,7 +1,7 @@
 # Installation
 
 1. Download SB-policesystems and place into resource folder
-2. Change config file for your vehicles you want on.
+2. Change the configuration file for the vehicles you want to allow to appear and if you want the players who make the vehicles appear to teleport into the vehicle
 3. Add "ensure SB-policesystems" to your server.cfg
 4. Start Server 
 
